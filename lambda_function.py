@@ -25,7 +25,7 @@ def send_notification(message):
 
 
 def send_response_to_server(response):
-    url = "https://9ef0-41-188-107-126.ngrok-free.app/receive-sns-message"
+    url = "YOUR_NODEJS_APP_URL" # if you are working local you can use ngrok to generate a public url to access your local node app
     headers = {"Content-Type": "application/json", "method":"POST"}
     # data = json.dumps(response).encode("utf-8")
     data = json.dumps(list(response)).encode("utf-8")
