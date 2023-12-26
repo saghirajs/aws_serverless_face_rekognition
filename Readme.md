@@ -61,10 +61,3 @@ Before you begin, ensure you have the following installed:
 
 To test the complete application flow, follow the steps in the "Testing the Face Detection App" section of the documentation.
 
-## Contributing
-
-Contributions are welcome! Please follow the guidelines in [CONTRIBUTING.md](CONTRIBUTING.md).
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
