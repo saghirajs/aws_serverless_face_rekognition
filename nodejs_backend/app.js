@@ -26,8 +26,8 @@ app.use(express.json());
 
 const s3 = new S3Client({
   credentials: {
-    accessKeyId: "AKIATZQ2IXCD7S3K4IUV",
-    secretAccessKey: "70ldRqx5/rteYJYHrtGzC7cAmyMbhdZOU8J6EDZu",
+    accessKeyId: "YOUR_ACCESS_KEY",
+    secretAccessKey: "YOUR_SECRET_ACCESS_KEY",
   },
   region: "eu-west-2",
 });
