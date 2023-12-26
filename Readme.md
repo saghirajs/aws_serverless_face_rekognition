@@ -19,10 +19,8 @@ This project is a facial recognition system that captures images from a webcam, 
 
 
 For detailed documentation on how to set up, use, and contribute to the project, please refer to our [
-Documentation
-](
-[docs/README.md](https://docs.google.com/document/d/1FdTwDfLeMhcC8kB815dBv3oiysLkdmaUA86WJb_cXqs/edit?usp=sharing)
-).
+[Documentation](https://docs.google.com/document/d/1FdTwDfLeMhcC8kB815dBv3oiysLkdmaUA86WJb_cXqs/edit?usp=sharing)
+.
 
 ## Features
 
