@@ -1,80 +1,69 @@
-Serverless Face Detection App with React, Node.js, and AWS
-Overview
-This repository contains the source code for a serverless face detection application built using React, Node.js, and various AWS services. The application captures images from a webcam, uploads them to AWS S3, triggers a Lambda function for face recognition using Rekognition, and stores the results in DynamoDB.
+# Face Recognition System
 
-Prerequisites
-Before getting started, make sure you have the following prerequisites installed:
+This project is a facial recognition system that captures images from a webcam, processes them using AWS Rekognition, and stores the results in DynamoDB. The system also provides real-time updates via WebSocket communication and displays notifications on an Arduino-connected LCD screen.
 
-AWS Account:
+## Table of Contents
 
-Create an AWS account and configure AWS CLI with necessary credentials.
-Node.js and npm:
+- [Features](#features)
+- [Architecture](#architecture)
+- [Prerequisites](#prerequisites)
+- [Getting Started](#getting-started)
+- [Configuration](#configuration)
+- [Usage](#usage)
+- [Testing](#testing)
+- [Contributing](#contributing)
+- [License](#license)
 
-Install Node.js and npm to run the React application locally.
-AWS CLI and AWS SAM CLI:
+## Features
 
-Install the AWS CLI for managing AWS resources.
-Install the AWS SAM CLI for deploying and managing serverless applications.
-Web Browser with Webcam Support:
+- Image capture using React and the `react-webcam` library.
+- AWS Lambda function for facial recognition with Rekognition.
+- Real-time updates via WebSocket communication.
+- Notifications on an Arduino-connected LCD screen.
+- Results stored in DynamoDB.
 
-Use a modern web browser supporting webcam access through the getUserMedia API.
-Code Editor:
+## Architecture
 
-Choose a code editor (e.g., Visual Studio Code) for writing and editing code.
-Installation
-Follow these steps to set up and run the application:
+The project follows a serverless architecture using AWS services such as S3, DynamoDB, Lambda, and Rekognition. WebSocket communication is established between the React app and a local Node.js server. The system integrates an Arduino Uno with an LCD screen for physical notifications.
 
-Clone the Repository:
+## Prerequisites
 
-bash
-Copy code
-git 
-clone
- https://github.com/your-username/your-repo.git
-cd
- your-repo
-Install Dependencies:
+Before you begin, ensure you have the following installed:
 
-bash
-Copy code
-npm install
-Deploy AWS Infrastructure:
+- Node.js and npm
+- Serverless Framework (if deploying AWS Lambda functions)
+- Arduino IDE (if working with Arduino Uno)
+- AWS CLI configured with necessary credentials
 
-bash
-Copy code
-aws cloudformation deploy --template-file aws-iac-template.yaml --stack-name YourStackName --capabilities CAPABILITY_IAM
-Start the React Application:
+## Getting Started
 
-bash
-Copy code
-npm start
-Open the Application:
+1. Clone the repository: `git clone https://github.com/your-username/face-recognition-system.git`
+2. Navigate to the project directory: `cd face-recognition-system`
+3. Install dependencies: `npm install`
+4. Follow the configuration steps below.
+5. Start the local Node.js server: `npm start`
 
-Visit http://localhost:3000 in your web browser.
-Usage
-Capture Images:
+## Configuration
 
-Open the application and allow webcam access.
-Capture images using the provided interface.
-AWS Lambda Face Detection:
+1. Set up an AWS account and configure AWS CLI credentials.
+2. Create an S3 bucket, DynamoDB table, and Lambda function using the provided CloudFormation template.
+3. Configure the React app and local Node.js server with necessary environment variables.
+4. Connect your Arduino Uno and update the COM port in the Arduino code.
 
-Images are automatically uploaded to AWS S3.
-Lambda function is triggered to perform face detection using Rekognition.
-Results in DynamoDB:
+## Usage
 
-Face detection results are stored in DynamoDB for future reference.
-Code Structure
-/src: React application source code.
-/lambda: AWS Lambda function code for face detection.
-aws-iac-template.yaml: AWS CloudFormation template for infrastructure setup.
-Contributing
-Contributions are welcome! Read the contribution guidelines for details.
+1. Run the React app: `npm start`
+2. Capture images using the webcam.
+3. Observe real-time updates, notifications on the Arduino screen, and stored results in DynamoDB.
 
-License
-This project is licensed under the MIT License.
+## Testing
 
-Changelog
-Check the changelog for updates and version history.
+To test the complete application flow, follow the steps in the "Testing the Face Detection App" section of the documentation.
 
-Troubleshooting
-If you encounter any issues, refer to the troubleshooting guide for solutions.
+## Contributing
+
+Contributions are welcome! Please follow the guidelines in [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
