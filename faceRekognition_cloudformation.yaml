@@ -1,0 +1,64 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: An AWS Serverless face recognition Function.
+Resources:
+  cloudformationrekognition:
+    Type: AWS::S3::Bucket
+    Properties:
+      VersioningConfiguration:
+        Status: Enabled
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+
+  cloudformationRekognitionTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: cloudformationRekognitionTable
+      AttributeDefinitions:
+        - AttributeName: faceId
+          AttributeType: S
+      KeySchema:
+        - AttributeName: faceId
+          KeyType: HASH
+      ProvisionedThroughput:
+        ReadCapacityUnits: 5
+        WriteCapacityUnits: 5
+
+  cloudformationfaceRekognition:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: s3://londonfacerekognition/serverless-face-rekognition-lambda/faceRekognition-44be021e-474b-495e-8a35-d1fadd8e081b.zip
+      Description: An Amazon S3 trigger that uses Rekognition APIs to detect faces
+      MemorySize: 128
+      Timeout: 10
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.10
+      Events:
+        BucketEvent:
+          Type: S3
+          Properties:
+            Bucket: !Ref cloudformationrekognition
+            Events:
+              - s3:ObjectCreated:*
+
+      Policies:
+        - Statement:
+            - Effect: Allow
+              Action:
+                - rekognition:*
+              Resource: '*'
+            - Action:
+                - sns:*
+              Effect: Allow
+              Resource: '*'
+            - Action:
+                - dynamodb:*
+              Effect: Allow
+              Resource: !GetAtt cloudformationRekognitionTable.Arn
+            - Effect: Allow
+              Action:
+                - s3:*
+                - s3-object-lambda:*
+              Resource: '*'
