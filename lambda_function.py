@@ -13,7 +13,7 @@ sns = boto3.client('sns')
 
 # BUCKET_NAME = 'londonfacerekognition'
 
-sns_topic_arn = 'arn:aws:sns:eu-west-2:260974360711:faceRekognition'
+sns_topic_arn = 'YOUR_SNS_TOPIC_ARN'
 
 
 def send_notification(message):
