@@ -67,5 +67,6 @@ Before you begin, ensure you have the following installed:
 
 ## Testing
 
-To test the complete application flow, follow the steps in the "Testing the Face Detection App" section of the documentation.
+To test the complete application flow, follow the steps in the "Testing the Face Detection App" section of the [Documentation](https://docs.google.com/document/d/1FdTwDfLeMhcC8kB815dBv3oiysLkdmaUA86WJb_cXqs/edit?usp=sharing)
+.
 
