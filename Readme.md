@@ -37,8 +37,8 @@ Before you begin, ensure you have the following installed:
 
 ## Getting Started
 
-1. Clone the repository: `git clone https://github.com/your-username/face-recognition-system.git`
-2. Navigate to the project directory: `cd face-recognition-system`
+1. Clone the repository: `git clone https://github.com/saghirajs/aws_serverless_face_rekognition.git`
+2. Navigate to the project directory: `cd aws_serverless_face_rekognition`
 3. Install dependencies for the Node.js backend: `cd nodejs_backend && npm install`
 4. Install dependencies for the React app: `cd ../serverless-face-rekognition && npm install`
 5. Follow the configuration steps below.
