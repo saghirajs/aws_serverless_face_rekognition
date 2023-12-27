@@ -1,6 +1,6 @@
 # Face Recognition System
 
-This project is a facial recognition system that captures images from a webcam, processes them using AWS Rekognition, and stores the results in DynamoDB. The system also provides real-time updates via WebSocket communication and displays notifications on an Arduino-connected LCD screen.
+This project is a facial recognition system that captures images from a webcam, processes them using AWS Rekognition, and stores the results in DynamoDB. The system also provides real-time updates via WebSocket communication and displays notifications on a reactjs appand an Arduino-connected LCD screen.
 
 ## Table of Contents
 
@@ -18,7 +18,7 @@ This project is a facial recognition system that captures images from a webcam, 
 ## Documentation
 
 
-For detailed documentation on how to set up, use, and contribute to the project, please refer to our 
+For detailed documentation on how to set up and use the project, please refer to our 
 [Documentation](https://docs.google.com/document/d/1FdTwDfLeMhcC8kB815dBv3oiysLkdmaUA86WJb_cXqs/edit?usp=sharing)
 .
 
@@ -26,13 +26,13 @@ For detailed documentation on how to set up, use, and contribute to the project,
 
 - Image capture using React and the `react-webcam` library.
 - AWS Lambda function for facial recognition with Rekognition.
-- Real-time updates via WebSocket communication.
+- Real-time updates via WebSocket communication through a nodejs app.
 - Notifications on an Arduino-connected LCD screen.
 - Results stored in DynamoDB.
 
 ## Architecture
 
-The project follows a serverless architecture using AWS services such as S3, DynamoDB, Lambda, and Rekognition. WebSocket communication is established between the React app and a local Node.js server. The system integrates an Arduino Uno with an LCD screen for physical notifications.
+The project follows a microservices architecture and a serverless architecture for AWS services such as S3, DynamoDB, Lambda, and Rekognition. WebSocket communication is established between the React app and a local Node.js server. The system integrates an Arduino Uno with an LCD screen for physical notifications.
 
 ## Prerequisites
 
